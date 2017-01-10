@@ -1,6 +1,6 @@
 var margin = {top: 10, right: 20, bottom: 30, left: 30};
-var width = 400 - margin.left - margin.right;
-var height = 565 - margin.top - margin.bottom;
+var width = 600 - margin.left - margin.right;
+var height = 600 - margin.top - margin.bottom;
 
 let data = [
   {
@@ -42,6 +42,7 @@ let svg = d3.select('.chart')
   .append('svg')
   .attr('width', width + margin.left + margin.right)
   .attr('height', height + margin.top + margin.bottom)
+  .call(responsivefy)
   .append('g')
   .attr('transform', `translate(${margin.left}, ${margin.top})`)
 ;
@@ -173,7 +174,7 @@ function responsivefy(svg) {
   // necessary if you call invoke this function for multiple svgs
   // api docs: https://github.com/mbostock/d3/wiki/Selections#on
   d3.select(window).on("resize." + container.attr("id"), resize);
-
+  console.log(container, 'container');
   // get width of container and resize svg to fit it
   function resize() {
     var targetWidth = parseInt(container.style("width"));
