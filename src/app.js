@@ -176,7 +176,7 @@ function responsivefy(svg) {
   // necessary if you call invoke this function for multiple svgs
   // api docs: https://github.com/mbostock/d3/wiki/Selections#on
   d3.select(window).on("resize." + container.attr("id"), resize);
-  console.log(container, 'container');
+
   // get width of container and resize svg to fit it
   function resize() {
     var targetWidth = parseInt(container.style("width"));
